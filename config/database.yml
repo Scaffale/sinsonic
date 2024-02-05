@@ -1,0 +1,21 @@
+# config/database.yml
+
+defatult: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: sinsonic_development
+
+test:
+  <<: *default
+  database: sinsonic_test
+
+production:
+  <<: *default
+  database: sinsonic_production

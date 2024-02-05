@@ -1,0 +1,12 @@
+# .rubocop.yml
+require: rubocop-rake
+
+AllCops:
+  TargetRubyVersion: 3.3  # adjust this to match your Ruby version
+  NewCops: enable
+
+Metrics/LineLength:
+  Max: 120  # adjust this to your preferred maximum line length
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes  # use double quotes for string literals
