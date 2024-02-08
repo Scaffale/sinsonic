@@ -20,5 +20,5 @@ def subsonic_xml_response(&block)
   builder.to_xml
 end
 
-require_relative "routes/system"
-require_relative "routes/media_library_scanning"
+Dir[File.join(__dir__, "models", "*.rb")].each { |file| require_relative file }
+Dir[File.join(__dir__, "routes", "*.rb")].each { |file| require_relative file }

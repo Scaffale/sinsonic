@@ -4,6 +4,8 @@ require: rubocop-rake
 AllCops:
   TargetRubyVersion: 3.3  # adjust this to match your Ruby version
   NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
 
 Layout/LineLength:
   Max: 180  # adjust this to your preferred maximum line length
@@ -17,3 +19,8 @@ Style/StringLiterals:
 
 Style/Documentation:
   Enabled: false  # disable this cop
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/**/*'
+  Max: 20  # adjust this to your preferred maximum method length
