@@ -3,14 +3,27 @@
 require "fileutils"
 require_relative "../helpers/media_scanner"
 
+scanning = false
 # Subsonic API startScan.view endpoint
 post "/rest/startScan.view" do
   content_type :xml
 
-  init_scan
-  # For now, let's just return a placeholder response.
+  fork do
+    scanning = true
+    init_scan
+    scanning = false
+  end
+
   subsonic_xml_response do |xml|
-    xml.send("scanStatus", scanning: "true", count: 5422)
-    # xml.send("scanStatus", scanning: "true", count: media_files.count.to_s)
+    xml.send("scanStatus", scanning:, count: Song.all.count)
+  end
+end
+
+# Subsonic API getScanStatus.view endpoint
+get "/rest/getScanStatus.view" do
+  content_type :xml
+
+  subsonic_xml_response do |xml|
+    xml.send("scanStatus", scanning:, count: Song.all.count)
   end
 end

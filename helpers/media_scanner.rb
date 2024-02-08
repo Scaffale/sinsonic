@@ -2,13 +2,14 @@
 
 require "wahwah"
 require "pry"
+require "parallel"
 
 def init_scan
   media_folder = "/media"
   media_files = Dir.glob(File.join(media_folder, "**/*.{mp3,wav,flac,aac,ogg}"))
 
-  media_files.each do |file|
-    find_or_create_song file
+  Parallel.map(media_files) do |file|
+    find_or_create_song(file)
   end
 end
 

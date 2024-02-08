@@ -24,4 +24,9 @@ group :development, :test do
   gem "rspec"
   gem "rubocop", "~> 1.60", require: false
   gem "rubocop-rake"
+  gem "rubocop-rspec"
+end
+
+group :test do
+  gem "database_cleaner"
 end
