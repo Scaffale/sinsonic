@@ -3,6 +3,7 @@
 require "wahwah"
 require "pry"
 require "parallel"
+require "fileutils"
 
 def init_scan
   media_folder = "/media"

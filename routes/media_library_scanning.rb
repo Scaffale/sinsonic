@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require "fileutils"
 require_relative "../helpers/media_scanner"
 
 scanning = false
-# Subsonic API startScan.view endpoint
-post "/rest/startScan.view" do
+# Subsonic API startScan endpoint
+post "/rest/startScan" do
   content_type :xml
 
   fork do
@@ -19,8 +18,8 @@ post "/rest/startScan.view" do
   end
 end
 
-# Subsonic API getScanStatus.view endpoint
-get "/rest/getScanStatus.view" do
+# Subsonic API getScanStatus endpoint
+get "/rest/getScanStatus" do
   content_type :xml
 
   subsonic_xml_response do |xml|

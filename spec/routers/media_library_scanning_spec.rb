@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative "../spec_helper"
-
 require_relative "../shared/succedful_request"
 
 describe("media_libery_scanning API") do
@@ -12,8 +11,8 @@ describe("media_libery_scanning API") do
   </subsonic-response>'
   end
 
-  describe("startScan.view") do
-    subject { post "/rest/startScan.view" }
+  describe("startScan") do
+    subject { post "/rest/startScan" }
 
     before(:each) do
       allow_any_instance_of(Sinatra::Application).to receive(:init_scan).and_return(nil)
@@ -22,8 +21,8 @@ describe("media_libery_scanning API") do
     it_behaves_like "a successful request"
   end
 
-  describe("getScanStatus.view") do
-    subject { get "/rest/getScanStatus.view" }
+  describe("getScanStatus") do
+    subject { get "/rest/getScanStatus" }
 
     it_behaves_like "a successful request"
   end

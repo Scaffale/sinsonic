@@ -1,0 +1,19 @@
+one:
+  name: "Album One"
+  artist: one
+
+two:
+  name: "Album Two"
+  artist: one
+
+three:
+  name: "Album Three"
+  artist: two
+
+four:
+  name: "Album Four"
+  artist: two
+
+five:
+  name: "Album Five"
+  artist: three
