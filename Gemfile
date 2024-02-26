@@ -20,6 +20,8 @@ gem "puma", "~> 6.4"
 
 group :development, :test do
   gem "equivalent-xml", "~> 0.6.0"
+  gem "factory_bot", "~> 6.4"
+  gem "faker", "~> 3.2"
   gem "rack-test"
   gem "rspec"
   gem "rubocop", "~> 1.60", require: false
@@ -29,4 +31,5 @@ end
 
 group :test do
   gem "database_cleaner"
+  gem "nyan-cat-formatter"
 end

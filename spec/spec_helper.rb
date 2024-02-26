@@ -10,9 +10,17 @@ require "rack/test"
 require "rspec/matchers" # req by equivalent-xml custom matcher `be_equivalent_to`
 require "equivalent-xml"
 require "database_cleaner"
+require "factory_bot"
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+
+  config.include FactoryBot::Syntax::Methods
+
+  config.before(:suite) do
+    FactoryBot.find_definitions
+  end
+
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end

@@ -10,18 +10,3 @@ get "/rest/getMusicFolders" do
     end
   end
 end
-
-# Subsonic API getAlbumList endpoint
-get "/rest/getAlbumList" do
-  content_type :xml
-
-  # read params
-  albums = Album.all
-  subsonic_xml_response do |xml|
-    xml.albumList do
-      albums.each do |album|
-        xml.album(album.to_xml_list)
-      end
-    end
-  end
-end
