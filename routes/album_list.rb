@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'lucky_case'
+require "lucky_case"
 
 # Subsonic API getAlbumList endpoint
 get "/rest/getAlbumList" do

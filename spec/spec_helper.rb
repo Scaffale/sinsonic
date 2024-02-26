@@ -12,6 +12,9 @@ require "equivalent-xml"
 require "database_cleaner"
 require "factory_bot"
 
+require_relative "shared/succedful_request"
+require_relative "shared/album_list_request"
+
 RSpec.configure do |config|
   config.include Rack::Test::Methods
 
