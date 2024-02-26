@@ -18,8 +18,8 @@ class RequestLogger
   end
 
   def call(env)
-    request = Rack::Request.new(env)
-    puts "Request: #{request.request_method} #{request.path}"
+    # request = Rack::Request.new(env)
+    # puts "Request: #{request.request_method} #{request.path}"
     @app.call(env)
   end
 end

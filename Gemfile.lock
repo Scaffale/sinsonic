@@ -42,6 +42,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.7.1)
     language_server-protocol (3.17.0.3)
+    lucky_case (1.1.0)
     method_source (1.0.0)
     mini_portile2 (2.8.5)
     minitest (5.21.2)
@@ -147,6 +148,7 @@ DEPENDENCIES
   factory_bot (~> 6.4)
   faker (~> 3.2)
   json (~> 2.7)
+  lucky_case (~> 1.1)
   nokogiri (~> 1.16)
   nyan-cat-formatter
   parallel (~> 1.24)

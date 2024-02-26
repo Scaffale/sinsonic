@@ -17,7 +17,7 @@ class Album < ActiveRecord::Base
   scope :alphabetical_by_name, -> { order("title ASC") }
   scope :alphabetical_by_artist, -> { joins(:artist).order("artists.name ASC") }
   scope :starred, -> { where(starred: true) }
-  scope :by_year, ->(from_year:, to_year:) { where("year < ? AND year > ?", to_year, from_year) }
+  scope :by_year, ->(from_year:, to_year:) { where("year <= ? AND year >= ?", to_year, from_year) }
   scope :by_genre, ->(genre) { where(genre:) }
 
   def to_xml_list

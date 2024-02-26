@@ -33,3 +33,5 @@ group :test do
   gem "database_cleaner"
   gem "nyan-cat-formatter"
 end
+
+gem "lucky_case", "~> 1.1"

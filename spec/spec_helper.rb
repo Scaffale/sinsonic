@@ -17,6 +17,8 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 
+  config.seed =  518_462
+
   config.before(:suite) do
     FactoryBot.find_definitions
   end
