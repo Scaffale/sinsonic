@@ -12,8 +12,8 @@ RSpec.shared_examples "a album list request" do
     response_xml = Nokogiri::XML(subject_body)
     expected_response_xml = Nokogiri::XML(expected_response)
 
-    album_tag_response = response_xml.search("albumList").to_xml.squeeze(' ')
-    expected_album_tag_response = expected_response_xml.search("albumList").to_xml.squeeze(' ')
+    album_tag_response = response_xml.search("albumList").to_xml.squeeze(" ")
+    expected_album_tag_response = expected_response_xml.search("albumList").to_xml.squeeze(" ")
 
     expect(album_tag_response).to eq(expected_album_tag_response)
   end
